@@ -1,10 +1,45 @@
 // src/Form.js
 import React from 'react';
+import { useState } from 'react';
+import { run } from './aws.py';
 import './Form.css'; // Import CSS for styling
 import BarChart from './BarChart'; // Import the BarChart component
 import PieChart from './PieChart'; // Import the PieChart component
 
 const Form = () => {
+  // Set up state to track input values
+  const [formValues, setFormValues] = useState({
+    N: '',
+    P: '',
+    K: '',
+    Temp: '',
+    Humidity: '',
+    Ph: '',
+    Rainfall: '',
+  });
+
+  // Handle input changes
+  const [result, setResult] = useState(''); // State to hold the result from the external function
+
+  // Handle input changes
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormValues((prevValues) => ({
+      ...prevValues,
+      [id]: value, // Update the appropriate input's value
+    }));
+  };
+
+  // Handle form submission or button click
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent page reload on form submit
+
+    // Call the imported function from utils.js and get the return value
+    const returnValue = run(formValues);
+
+    // Store the return value in the state
+    setResult(returnValue);
+  };
   return (
     <div className="form-container">
       <form>
