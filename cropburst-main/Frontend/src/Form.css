@@ -1,11 +1,15 @@
 /* src/Form.css */
 .form-container {
     position: absolute;
-    top: 160px; /* Adjust based on the height of your banner */
+    top: 200px; /* Adjust based on the height of your banner */
     left: 20px;
     width: 200px;
   }
-  
+  .form-wrapper {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+  }
   .form-group {
     margin-bottom: 10px;
     display: flex;
@@ -14,7 +18,9 @@
   
   label {
     margin-bottom: 5px;
-    font-size: 1rem;
+    font-family: 'Hammersmith One', sans-serif;
+    font-weight: bold;
+    font-size: 1 rem;
     color: #333;
   }
   
@@ -23,21 +29,31 @@
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 100%; /* Make input box full width under label */
+    font-family: 'Hammersmith One', sans-serif;
+    width: 91%; /* Make input box full width under label */
   }
   
   .submit-button {
     width: 100%; /* Full width button */
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #5fc062;
     color: white;
     border: none;
     border-radius: 4px;
+    font-family: 'Hammersmith One', sans-serif;
     font-size: 1rem;
     cursor: pointer;
   }
   
   .submit-button:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #51b685; /* Darker green on hover */
+  }
+  .vertical-line {
+    position: absolute; /* Absolute positioning for manual placement */
+  top: -50px; /* Start at the top of the container */
+  left: 210px; /* Manually set the distance from the left (adjust as needed) */
+  height: 120vh; /* Full viewport height */
+  width: 5px; /* Thickness of the line */
+  background-color: #85b69d; /* Line color */
   }
   
