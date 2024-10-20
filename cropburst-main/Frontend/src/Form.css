@@ -1,4 +1,11 @@
 /* src/Form.css */
+.form-and-charts-container {
+  display: flex; /* Flexbox for horizontal layout */
+  align-items: flex-start; /* Align items at the top */
+  justify-content: space-between; /* Add space between form and charts */
+  padding: 20px;
+}
+
 .form-container {
     position: absolute;
     top: 200px; /* Adjust based on the height of your banner */
@@ -57,3 +64,14 @@
   background-color: #85b69d; /* Line color */
   }
   
+  .charts-container {
+    position: absolute;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for perfect centering */
+  left: 350px;
+  }
+  
+  /* Optional: Add some margins between the charts */
+  .charts-container > * {
+    margin-bottom: 20px;
+  }

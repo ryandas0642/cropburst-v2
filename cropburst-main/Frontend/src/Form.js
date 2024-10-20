@@ -1,6 +1,8 @@
 // src/Form.js
 import React from 'react';
 import './Form.css'; // Import CSS for styling
+import BarChart from './BarChart'; // Import the BarChart component
+import PieChart from './PieChart'; // Import the PieChart component
 
 const Form = () => {
   return (
@@ -38,6 +40,11 @@ const Form = () => {
         <button type="submit" className="submit-button">Submit</button>
       </form>
       <div className="vertical-line"></div>
+      {/* Charts Section */}
+      <div className="charts-container">
+        <BarChart /> {/* Bar Chart */}
+        <PieChart /> {/* Pie Chart */}
+      </div>
     </div>
     
   );
